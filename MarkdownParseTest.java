@@ -31,7 +31,8 @@ public class MarkdownParseTest { //creates the class
         Path fileName = Path.of("test-file8.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.google.com/"), links);
+        assertEquals("Test whether the program can work well when there is an image link",List.of("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "https://www.google.com/"), links);
+        assertEquals("Test whether the output have the correct length when there is an image link",2, links.size());
     }
 
 }
