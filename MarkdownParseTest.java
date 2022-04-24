@@ -40,6 +40,14 @@ public class MarkdownParseTest { //creates the class
         ArrayList<String> links = MarkdownParse.getLinks(content);
         assertEquals(List.of("https://www.youtube.com/watch?v=k67e-Icw4ug", "https://docs.google.com/document/d/1imYmDA9jxAahtM-0pG24BjfkO5F2Q0MVQVtzVYsl_D0/edit"), links);
     }
+    @Test
+    public void tutorial5() throws IOException{
+        Path fileName = Path.of("test-file2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://something.com", "some-thing.html"), links);
+    }
+
 
 
 }
